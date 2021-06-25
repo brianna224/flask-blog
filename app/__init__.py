@@ -10,6 +10,16 @@ f = open("./lavina.json")
 data = json.load(f)
 f.close()
 
+@app.route('/health')
+def health():
+    returnrender_template(
+        'data.html',
+        data=data,
+        main="Accomplishments",
+        side1="Experience",
+        side2="Projects",
+        url=os.getenv("URL"))
+
 @app.route('/')
 @app.route('/Experience/')
 def index():
