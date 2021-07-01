@@ -36,14 +36,14 @@
     ],
     "Accomplishments": [
         {
-            "name": "Whatever it is",
+            "name": "Accomplishment 1",
             "date": "2018",
-            "details": "accomplishment 1 details"
+            "details": "details"
         },
         {
             "name": "Accomplishment 2",
             "date": "2019",
-            "details": "accomplishment 2 details"
+            "details": "details"
         }
     ]
 }
