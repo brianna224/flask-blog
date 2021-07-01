@@ -30,11 +30,15 @@
 	<div class="profile">
 	    <div class="row">
 		<div class="column">
-		    <h2>Hi! I am</h2>
-		    <h1>{% block name %}{% endblock %}</h1>
-		    <h4>{% block title %}{% endblock %}</h4>
-		    <text> {% block about %}{% endblock %} </text>
+			<div class="card">
+				<div class="card-body">
+		    <h2 class="card-title">Hi! I am</h2>
+		    <!-- <h1>{% block name %}{% endblock %}</h1> -->
+		    <!-- <h4>{% block title %}{% endblock %}</h4> -->
+		    <p class="card-text"> {% block about %}{% endblock %} </p>
 		</div>
+	</div>
+</div>
 		<div class="column">
 		    <a href="/"><img src="/static/img/profile-pic.png" style="width: 275px; height: 225px" /></a>
 		</div>
@@ -51,3 +55,4 @@
 	</div>
     </body>
 </html>
+
