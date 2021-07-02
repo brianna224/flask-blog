@@ -1,7 +1,16 @@
+<<<<<<< Updated upstream
 .venv
 __pycache__
 *.pyc
 .env
 python3-virtualenv/
 flask.sqlite
+=======
+.venv
+__pycache__
+*.pyc
+.env
+python3-virtualenv/
+flask.sqlite
+>>>>>>> Stashed changes
 *~
