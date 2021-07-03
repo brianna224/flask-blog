@@ -1,7 +1,7 @@
 import os
 import json
 from flask import Flask, request, render_template
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -36,7 +36,7 @@ class UserModel(db.Model):
     def __repr__(self):
         return f"<User {self.username}>"
 
-load_dotenv()
+#load_dotenv()
 
 f = open("./lavina.json")
 data = json.load(f)
@@ -59,7 +59,7 @@ def health():
 
 #@app.route('/')
 @app.route('/Experience/')
-def index():
+def experience():
     return render_template('data.html',
                            data=data,
                            main="Experience",
