@@ -107,18 +107,6 @@ def register():
             db.session.commit()
             return f"User {username} created successfully"
 
-        #elif db.execute(
-         #   'SELECT id FROM user WHERE username = ?', (username,)
-        #).fetchone() is not None:
-         #   error = f"User {username} is already registered."
-
-        #if error is None:
-         #   db.execute(
-          #      'INSERT INTO user (username, password) VALUES (?, ?)',
-           #     (username, generate_password_hash(password))
-            #)
-            #db.commit()
-            #return f"User {username} created successfully"
         else:
             return error, 418
 
@@ -131,16 +119,11 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        #db = get_db()
-        error = None
-        #user = db.execute(
-         #   'SELECT * FROM user WHERE username = ?', (username,)
-        #).fetchone()
 
+        error = None
+        
         if user is None:
             error = 'Incorrect username.'
-        #elif not check_password_hash(user['password'], password):
-         #   error = 'Incorrect password.'
 
         elif not check_password_hash(user.password, password):
             error = 'Incorrect password.'
