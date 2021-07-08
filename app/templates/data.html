@@ -37,7 +37,7 @@
 {% endblock %}
 
 {% block side1 %}
-<h4><a href="/{{ side1 }}">{{ side1 }}</a></h4>
+<h4><a href="/{{ url_for('side1') }}">{{ side1 }}</a></h4>
 {% for datum in data[side1] %}
 <text>
     {{ datum["name"] }}<br />
@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block side2 %}
-<h4><a href="/{{ side2 }}">{{ side2 }}</a></h4>
+<h4><a href="/{{ url_for('side2') }}">{{ side2 }}</a></h4>
 {% for datum in data[side2] %}
 <text>
     {{ datum["name"] }}<br />
