@@ -28,20 +28,22 @@
     </header>
 
     <body>
-	<div class="profile">
+		<div class="profile">
 	    <div class="row">
 		<div class="column">
 			<div class="card">
 				<div class="card-body">
-		    <h2 class="card-title">Hi! I am</h2>
-		    <!-- <h1>{% block name %}{% endblock %}</h1> -->
-		    <!-- <h4>{% block title %}{% endblock %}</h4> -->
+		    <h2 class="card-title">About Me</h2>
+		    <h1>{% block name %}{% endblock %}</h1>
+		    <h4>{% block title %}{% endblock %}</h4>
 		    <p class="card-text"> {% block about %}{% endblock %} </p>
 		</div>
 	</div>
 </div>
 		<div class="column">
 		    <a href="/"><img src="/static/img/profile-pic.png" style="width: 275px; height: 225px" /></a>
+		</div>
+		</div>
 		</div>
 	<div class="technical-side">
 	    {% block skills %}{% endblock %}
@@ -52,6 +54,5 @@
 	    {% block side1 %}{% endblock %}
 	    {% block side2 %}{% endblock %}
 	</div>
-    </body>
+	</body>
 </html>
-
