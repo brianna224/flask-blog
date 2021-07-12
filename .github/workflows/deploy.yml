@@ -40,7 +40,6 @@ jobs:
           'cd ${{ secrets.PROJECT_ROOT }} &&
           docker-compose ps'
 
-    Steps:
       - name: successful deployment notification
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
       - name: failed deployment
