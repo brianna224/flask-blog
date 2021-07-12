@@ -34,3 +34,21 @@ jobs:
           git fetch &&
           git reset --hard origin/master &&
           docker-compose up -d --build'
+
+      - name: Print container status
+        run: ssh my-vm
+          'cd ${{ secrets.PROJECT_ROOT }} &&
+          docker-compose ps'
+
+    Steps:
+      - name: successful deployment notification
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+      - name: failed deployment
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Endpoint testing
+        run: bash prod-test.sh
