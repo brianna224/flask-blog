@@ -28,22 +28,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
 
-      - name: Deploy site
-        run: >-
-          ssh my-vm
-          'cd ${{ secrets.PROJECT_ROOT }} &&
-          git fetch &&
-          git reset --hard origin/master &&
-          docker-compose up -d --build'
-
-      - name: Print container status
-        run: >-
-          ssh my-vm
-          'cd ${{ secrets.PROJECT_ROOT }} &&
-          docker-compose ps'
-      - name: Test site endpoints
-        run: >-
-          ssh my-vm
-          'cd ${{ secrets.PROJECT_ROOT }} &&
-          sleep 10 &&
-          ./test_endpoints.sh'
+      - name: Print project root directory
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} & pwd'
